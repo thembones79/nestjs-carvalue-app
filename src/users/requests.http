@@ -1,0 +1,11 @@
+### Create a new user
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email":"ghghhg@op.pl",
+  "password":"ddfghjkkjh"
+}
+
+### Find a particular user with a given ID
+GET http://localhost:3000/auth/2
