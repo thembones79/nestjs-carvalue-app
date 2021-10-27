@@ -1,3 +1,14 @@
+### Create a new prod user
+POST https://damp-ocean-75974.herokuapp.com/auth/signup
+content-type: application/json
+
+{
+  "email":"test@op.pl",
+  "password":"ddfghjkkjh"
+}
+
+
+
 ### Create a new user
 POST http://localhost:3000/auth/signup
 content-type: application/json
