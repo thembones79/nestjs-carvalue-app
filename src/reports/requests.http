@@ -1,4 +1,13 @@
-### Create a new user
+### Change report approval
+PATCH http://localhost:3000/reports/8
+content-type: application/json
+
+{
+  "approved":true
+
+}
+
+### Create report
 POST http://localhost:3000/reports
 content-type: application/json
 
@@ -13,6 +22,21 @@ content-type: application/json
 
 }
 
+### Create another report
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+  "make":"ford",
+  "model":"mustang",
+  "year": 1982,
+  "mileage": 50000,
+  "lng":45,
+  "lat":45,
+  "price":20000
+
+}
+
 ### Log in
 POST http://localhost:3000/auth/login
 content-type: application/json
@@ -22,25 +46,9 @@ content-type: application/json
   "password":"ddfghjkkjh"
 }
 
-### Logout
-POST http://localhost:3000/auth/logout
+### Get an estimate for an exixting vwhicle
+GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=100000&year=1980
 
-### Get currently signed user
-GET http://localhost:3000/auth/whoami
 
-### Find a particular user with a given ID
-GET http://localhost:3000/auth/1
-
-### Find all users with a given email
-GET http://localhost:3000/auth?email=ghghhg3@op.pl
-
-### Delete user with a given email
-DELETE http://localhost:3000/auth/20
-
-### Update a user
-PATCH http://localhost:3000/auth/10
-content-type: application/json
-
-{
-  "email":"ghghhg5@op.pl"
-}
+### Get another estimate for an exixting vwhicle
+GET http://localhost:3000/reports?make=ford&model=mustang&lng=45&lat=45&mileage=20000&year=1981
